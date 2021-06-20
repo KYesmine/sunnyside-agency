@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as *;
+
+.gallery {
+    @include flex;
+    flex-wrap: wrap;
+
+    .gallery__img {
+        width: 50%;
+    }
+
+    @include medium {
+        flex-wrap: nowrap;
+
+        .gallery__img {
+            flex: 1;
+        }
+    }
+
+}

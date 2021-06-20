@@ -1,0 +1,19 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/scales' as *;
+
+:root {
+
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --clr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+
+    @each $scale, $value in $scales {
+        --fz-#{$scale}: #{$value};
+    }
+
+    --ff-primary: 'Barlow', sans-serif;
+    --ff-secondary: 'Fraunces', serif;
+
+}

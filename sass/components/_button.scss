@@ -1,0 +1,40 @@
+button,
+.btn {
+    display: inline-block;
+    outline: none;
+    background-color: var(--clr-white-100);
+    border: none;
+    border-radius: 2em;
+    padding: 1em 2em;
+    font-size: var(--fz-200);
+    font-family: var(--ff-secondary);
+    color: var(--clr-blue-700);
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+button:hover,
+button:focus,
+.btn:hover,
+.btn:focus {
+    color: var(--clr-white-100);
+    background-color: rgba(#FFF, .4);
+}
+
+.btn--toggler {
+    border-radius: 0;
+    padding: 0;
+    background: none;
+}
+
+.btn--toggler:hover,
+.btn--toggler:focus {
+    background: none;
+}
+
+.btn--toggler:hover .icon-hamburger,
+.btn--toggler:focus .icon-hamburger  {
+    fill: rgba(#FFF, .4)
+} 

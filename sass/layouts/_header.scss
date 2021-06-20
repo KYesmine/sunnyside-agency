@@ -1,0 +1,135 @@
+@use '../abstracts/mixins' as *;
+
+.header-section {
+    // background-color: var(--clr-blue-400);
+    padding: 1.5em 0;
+    color: var(--clr-white-100);
+
+    min-height: 100vh;
+
+    background-image: url('../images/mobile/image-header.jpg');
+    @include desktop {
+        background-image: url('../images/desktop/image-header.jpg');
+    }
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header__navbar {
+    position: relative;
+    @include flex($justify: space-between);
+
+    .nav__menu {
+        @include flex;
+    }
+
+    .menu__link:not(.btn) {
+        text-decoration: none;
+        color: var(--clr-white-100);
+    }
+
+    .btn--toggler {
+        @include desktop {
+            display: none
+        }
+    }
+
+}
+
+.navbar__nav.active {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.navbar__nav {
+    position: absolute;
+    width: 100%;
+    background: var(--clr-white-100);
+    padding: 2em 0;
+    top: 50px;
+    transform: translate3d(0, -120%, 0);
+    opacity: 0;
+    transition: transform .45s ease-in-out,
+                opacity .45s ease-in-out;
+
+    .btn {
+        background: var(--clr-yellow-100);
+        color: var(--clr-blue-700);
+    }
+
+    .nav__menu {
+        flex-direction: column;
+    }
+
+    .nav__menu > * + * {
+        margin-top: 2em;
+    }
+
+    .menu__link:not(.btn) {
+        color: var( --clr-blue-200);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: -20px;
+        right: 0;
+        border: 10px solid transparent;
+        border-bottom: 10px solid var(--clr-white-100);
+        border-right: 10px solid var(--clr-white-100);
+    }
+
+    @include desktop {
+        background: none;
+        display: flex;
+        position: static;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        width: auto;
+        padding: 0;
+        
+        &::after {
+            display: none;   
+        }
+
+        .btn {
+            background: var(--clr-white-100);
+            color: var(--clr-blue-700);
+        }
+
+        .btn:hover {
+            background-color: rgba(#FFF, .4);
+        }
+
+        .nav__menu {
+            flex-direction: row;
+        }
+
+        .menu__link:not(.btn) {
+            color: var(--clr-white-100);
+        }
+
+        .nav__menu > * + * {
+            margin-top: 0;
+            margin-left: 2em;
+        }
+    }
+}
+
+.header__content {
+    @include flex;
+    flex-direction: column;
+    margin: 3em 0;
+    text-align: center;
+    margin-top: 7em;
+
+    .header__title {
+        margin-bottom: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 8.75px;
+    }
+}

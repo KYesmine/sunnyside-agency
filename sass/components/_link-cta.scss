@@ -1,0 +1,35 @@
+.link--cta {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--ff-secondary);
+    font-weight: 900;
+    font-size: var(--fz-200);
+    color: var(--clr-blue-700);
+    letter-spacing: 1px;
+}
+
+.link--cta::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 10px;
+    width: 110%;
+    bottom: -3px;
+    left: -5%;
+    border-radius: 2em;
+    background: var(--clr-yellow-100);
+    opacity: .4;
+    z-index: -1;
+    transition: opacity .3s;
+}
+
+.link--cta.link--red::after {
+    background: var(--clr-orange-100);
+}
+
+.link--cta:hover::after,
+.link--cta:focus::after {
+    opacity: 1;
+}

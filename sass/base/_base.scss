@@ -1,0 +1,56 @@
+@use '../abstracts/mixins' as *;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--ff-secondary);
+    font-weight: 900;
+}
+
+h1 {
+    font-size: var(--fz-800);
+    @include desktop {
+        font-size: var(--fz-900);
+    }
+}
+
+h2 {
+    font-size: var(--fz-700);
+    @include desktop {
+        font-size: var(--fz-800);
+    }
+}
+
+h3 {
+    font-size: var(--fz-600);
+}
+
+h4 {
+    font-size: var(--fz-300);
+    @include desktop {
+        font-size: var(--fz-500);
+    }
+}
+
+p {
+    color: var(--clr-blue-200);
+    letter-spacing: -0.13px;
+    line-height: 1.6875rem;
+}
+
+.container {
+    width: 95%;
+    max-width: 1352px;
+    margin: 0 auto;
+}

@@ -1,0 +1,79 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+
+.testimonials {
+    text-align: center;
+    padding: 3em 1em;
+
+    @include medium {
+        padding: 8em;
+    }
+
+    p {
+        color: var(--clr-blue-300);
+    }
+
+    .testimonials__title {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: var(--clr-blue-100);
+    }
+
+    .testimonial__img {
+        @include flex;
+
+        img {
+            border-radius: 50%;
+            width: 72px;
+        }
+    }
+
+    .testimonials__items {
+        margin-top: 2em;
+        @include flex($justify: space-between);
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+
+        @include media(700px, $breakpoint-xl) {
+            flex-direction: row;
+        }
+
+        @include media(1500px, $breakpoint-xl) {
+            width: 80%;
+        }
+    }
+
+    .testimonials__item {
+        margin: 1.5em 0;
+
+        @include media(700px, $breakpoint-xl) {
+            width: 25%;
+        }
+        
+        & > * + * {
+            margin-top: 1.5em;
+        }
+    }
+
+    .testimonial__content {
+        max-width: 450px;
+
+        @include medium {
+            max-width: max-content;
+        }
+    }
+
+    .author__name {
+        color: var(--clr-blue-700);
+        font-family: var(--ff-secondary);
+        font-weight: 900;
+    }
+
+    .author__job {
+        color: var(--clr-blue-100);
+        font-size: var(--fz-100);
+        margin-top: 0.5em;
+    }
+}
